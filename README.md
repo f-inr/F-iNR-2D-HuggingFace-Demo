@@ -12,6 +12,9 @@ pinned: false
 
 # F-INR 2D Image Demo - HuggingFace Demo
 
+> [!IMPORTANT]
+> This Hugging Face demo runs on **CPU only**. For full performance (GPU/TPU acceleration), please download this repository from Hugging Face or [GitHub](https://github.com/f-inr/) and run it locally with **CUDA/Conda**.
+
 This folder contains a self-sustained Gradio demo for the Tensor Decomposition (FINR) image reconstruction project.
 
 ## Project Structure
