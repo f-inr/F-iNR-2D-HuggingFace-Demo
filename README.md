@@ -1,3 +1,15 @@
+---
+title: F-INR 2D Image Demo
+emoji: 🖼️
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 4.0.0
+python_version: 3.10
+app_file: app.py
+pinned: false
+---
+
 # F-INR 2D Image Demo - HuggingFace Demo
 
 This folder contains a self-sustained Gradio demo for the Tensor Decomposition (FINR) image reconstruction project.
@@ -8,7 +20,6 @@ This folder contains a self-sustained Gradio demo for the Tensor Decomposition (
 - `model.py`: JAX/Flax implementation of the F-INR (CP) and Baseline INR models.
 - `utils.py`: Utility functions for data generation and loss calculation.
 - `requirements.txt`: Python dependencies.
-- `0886.png`: Sample image.
 
 ## How to Run
 
