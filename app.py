@@ -21,6 +21,8 @@
 # SOFTWARE.
 
 import os
+import requests
+from io import BytesIO
 from pathlib import Path
 
 import gradio as gr
@@ -107,13 +109,21 @@ def train_model(img, decomp_type, backend_type, embedding_type, rank, epochs, up
 
 
 # Load sample image
-image_files = list(Path(__file__).parent.glob("*.png")) + list(Path(__file__).parent.glob("*.jpg"))
-sample_img_path = image_files[0] if image_files else None
+remote_url = "https://f-inr.github.io/static/images/0886.png"
 
-if sample_img_path is None or not sample_img_path.exists():
-    sample_img = None
-else:
-    sample_img = Image.open(sample_img_path)
+try:
+    response = requests.get(remote_url, timeout=10)
+    sample_img = Image.open(BytesIO(response.content))
+    print(f"Loaded remote image from {remote_url}")
+except Exception as e:
+    print(f"Failed to load remote image: {e}. Falling back to local search.")
+    image_files = list(Path(__file__).parent.glob("*.png")) + list(Path(__file__).parent.glob("*.jpg"))
+    sample_img_path = image_files[0] if image_files else None
+
+    if sample_img_path is None or not sample_img_path.exists():
+        sample_img = None
+    else:
+        sample_img = Image.open(sample_img_path)
 
 with gr.Blocks() as demo:
     gr.HTML("""
