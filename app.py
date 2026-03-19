@@ -154,6 +154,13 @@ with gr.Blocks() as demo:
                 </button>
             </a>
         </div>
+          <div style="background: #fff3cd; border: 1px solid #ffecb5; color: #664d03; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 1rem; text-align: left;">
+                <strong style="font-weight: 800; color: #1f1f1f;">Important:</strong> This Hugging Face demo runs on <strong style="font-weight: 800; color: #1f1f1f;">CPU only</strong>.
+            For full performance, run locally with CUDA/Conda from
+            <a href="https://huggingface.co/spaces/f-inr/F-iNR-2D-HuggingFace-Demo" target="_blank">Hugging Face</a>
+            or
+            <a href="https://github.com/f-inr/F-iNR-2D-HuggingFace-Demo" target="_blank">GitHub</a>.
+        </div>
         <img src="https://f-inr.github.io/static/images/fig1_overview.png" alt="F-INR Overview" style="max-width: 100%; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="text-align: justify; margin-bottom: 2rem;">
             Implicit Neural Representations (INRs) model signals as continuous, differentiable functions. However, monolithic INRs scale poorly with data dimensionality. <strong>F-INR</strong> factorizes a high-dimensional INR into a set of compact, axis-specific sub-networks using functional tensor decomposition. This demo allows you to train an INR model on a <strong>2D image</strong> (as showcased in our paper) and compare our approach to a standard baseline.
