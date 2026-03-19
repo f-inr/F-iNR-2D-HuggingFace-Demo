@@ -1,0 +1,10 @@
+jax[cuda12]
+flax
+optax
+numpy
+Pillow
+gradio
+tqdm
+scikit-image
+opencv-python
+pandas
